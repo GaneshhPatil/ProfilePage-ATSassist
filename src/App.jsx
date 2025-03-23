@@ -1,36 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './components/Navbar';
-import ProfileCard from './components/ProfileCard';
-import styled from 'styled-components';
-import './profile.css'; // Import profile.css instead of App.css
+import './App.css';
+import logo from './logo.jpg'; // Import logo from src folder
+import profile from './profile.jpg'; // Import profile from src folder
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  min-height: 100vh; /* Full page height */
-`;
-
-const CardList = styled.div`
-  width: 90%; /* Cards take up 90% width */
-  max-width: 800px;
-  overflow-y: auto; /* Enable vertical scrolling */
-  max-height: calc(100vh - 150px); /* Adjust height based on navbar */
-  padding: 10px;
-`;
-
-const LoadingText = styled.p`
-  font-size: 20px;
-  color: #6a11cb;
-`;
-
-function App() {
+const App = () => {
   const [profiles, setProfiles] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Simulate fetching data from an API
   useEffect(() => {
     setTimeout(() => {
       const mockData = [
@@ -42,25 +18,46 @@ function App() {
       ];
       setProfiles(mockData);
       setLoading(false);
-    }, 2000); // Simulate a 2-second delay
+    }, 2000);
   }, []);
 
   return (
     <div className="App">
       <Navbar />
-      <Container>
+      <div className="container">
         {loading ? (
-          <LoadingText>Loading profiles...</LoadingText>
+          <p className="loading-text">Loading profiles...</p>
         ) : (
-          <CardList>
+          <div className="card-list">
             {profiles.map((profile, index) => (
               <ProfileCard key={index} {...profile} />
             ))}
-          </CardList>
+          </div>
         )}
-      </Container>
+      </div>
     </div>
   );
-}
+};
+
+const Navbar = () => {
+  return (
+    <div className="navbar-container">
+      <img src={logo} alt="Logo" className="logo" />
+      <input type="text" placeholder="Search..." className="search-bar" />
+      <img src={profile} alt="Profile" className="profile-photo" />
+    </div>
+  );
+};
+
+const ProfileCard = ({ name, domain, skills }) => {
+  return (
+    <div className="card-container">
+      <img src="https://placehold.co/150x150" alt="Profile" className="profile-image" />
+      <h2 className="name">{name}</h2>
+      <p className="domain">{domain}</p>
+      <p className="skills">{skills}</p>
+    </div>
+  );
+};
 
 export default App;

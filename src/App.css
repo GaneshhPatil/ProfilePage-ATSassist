@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6a11cb;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2575fc;
+}
+
+/* Navbar Styles */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg);
+}
+
+.search-bar {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  width: 40%;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: background 0.3s ease;
+}
+
+.search-bar:focus {
+  background: rgba(255, 255, 255, 1);
+  outline: none;
+}
+
+.profile-photo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+  transform: scale(1.1);
+}
+
+/* Container Styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  min-height: 100vh; /* Full page height */
+}
+
+/* Card List Styles */
+.card-list {
+  width: 90%; /* Cards take up 90% width */
+  max-width: 800px;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 150px); /* Adjust height based on navbar */
+  padding: 10px;
+}
+
+/* Loading Text Styles */
+.loading-text {
+  font-size: 20px;
+  color: #6a11cb;
+}
+
+/* Profile Card Styles */
+.card-container {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  padding: 20px;
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.profile-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 3px solid #6a11cb;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.1);
+}
+
+.name {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.domain {
+  color: #555;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+.skills {
+  color: #777;
+  font-size: 16px;
+}

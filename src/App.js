@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import ProfileCard from './components/ProfileCard';
 import styled from 'styled-components';
-import './App.css';
+import './profile.css'; // Import profile.css instead of App.css
 
 const Container = styled.div`
   display: flex;

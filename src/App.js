@@ -10,14 +10,14 @@ const Container = styled.div`
   align-items: center;
   padding: 20px;
   background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-  min-height: 100vh;
+  min-height: 100vh; /* Full page height */
 `;
 
 const CardList = styled.div`
-  width: 100%;
+  width: 90%; /* Cards take up 90% width */
   max-width: 800px;
-  overflow-y: auto;
-  max-height: 70vh;
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: calc(100vh - 150px); /* Adjust height based on navbar */
   padding: 10px;
 `;
 

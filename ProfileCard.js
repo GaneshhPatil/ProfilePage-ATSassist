@@ -2,39 +2,49 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CardContainer = styled.div`
-  background-color: #ffffff;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
   padding: 20px;
-  margin: 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
   max-width: 800px;
-  transition: transform 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   }
-`;
-
-const Name = styled.h2`
-  color: #333;
-  margin-bottom: 10px;
-`;
-
-const Domain = styled.p`
-  color: #555;
-  margin-bottom: 5px;
-`;
-
-const Skills = styled.p`
-  color: #777;
 `;
 
 const ProfileImage = styled.img`
   height: 100px;
   width: 100px;
   border-radius: 50%;
+  border: 3px solid #6a11cb;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const Name = styled.h2`
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 24px;
+`;
+
+const Domain = styled.p`
+  color: #555;
+  margin-bottom: 5px;
+  font-size: 18px;
+`;
+
+const Skills = styled.p`
+  color: #777;
+  font-size: 16px;
 `;
 
 const ProfileCard = ({ name, domain, skills }) => {
